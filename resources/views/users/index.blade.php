@@ -10,7 +10,7 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <table class="table">
-                    <a href="{{route('user.tambah')}}" class="btn btn-secondary" style="float:right"><i class="bi bi-person-plus-fill text-white"></i></a>
+                    <a href="{{route('user.tambah')}}" class="btn btn-secondary" style="float:right"><i class="bi bi-person-plus-fill text-white"></i> Tambah Data</a>
                         <thead>
                             <tr>
                             <th scope="col">No</th>
