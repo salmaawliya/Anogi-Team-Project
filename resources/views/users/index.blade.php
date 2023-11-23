@@ -28,8 +28,8 @@
                             <td>
                                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                                     <button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
-                                    <a href="{{route('user.lihat')}}" class="btn btn-warning"><i class="bi bi-eye-fill text-white"></i></a>
-                                    <a href="{{route('user.edit')}}" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
+                                    <a href="" class="btn btn-warning"><i class="bi bi-eye-fill text-white"></i></a>
+                                    <a href="" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
                                 </div>
                             </td>
                             </tr>

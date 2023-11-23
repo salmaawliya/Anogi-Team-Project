@@ -13,8 +13,8 @@ class UserController extends Controller {
     }
 
     public function tambah(Request $request) {
+        $user = new User;
         if ($request->has('name')) {
-            $user = new User;
 
             $user->name = $request->name;
             $user->email = $request->email;
@@ -23,9 +23,24 @@ class UserController extends Controller {
             $user->save();
             return redirect('/user');
         } else {
-            return view('users.tambah');
+            return view('users.tambah', compact('users'));
         }
     }
+
+    /* public function lihat(Request $request, string $id) {
+        if ($request->has('name')) {
+
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = $request->password;
+
+            $user->save();
+            return redirect('/user');
+        } else {
+            $user = User::findOrFail($id);
+            return view('users.tambah', compact('users'));
+        }
+    }*/
 
     public function  lihat() {
         return view('users.lihat');

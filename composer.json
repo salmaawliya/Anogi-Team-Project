@@ -9,7 +9,11 @@
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.2",
-        "laravel/tinker": "^2.8"
+        "laravel/tinker": "^2.8",
+        "infyomlabs/laravel-generator": "^6.0",
+        "infyomlabs/adminlte-templates": "^6.0",
+        "doctrine/dbal": "~2.3",
+        "infyomlabs/generator-builder": "^1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

@@ -25,7 +25,7 @@ Route::get('/halo', function () {
 
 Route::get('/user', [UserController::class, 'index'])->middleware('auth')->name('user');
 Route::get('/user/tambah', [UserController::class, 'tambah'])->middleware('auth')->name('user.tambah');
-Route::get('/user/lihat', [UserController::class, 'lihat'])->middleware('auth')->name('user.lihat');
+Route::get('/user/{id}', [UserController::class, 'lihat'])->middleware('auth')->name('user.lihat');
 Route::get('/user/edit', [UserController::class, 'edit'])->middleware('auth')->name('user.edit');
 
 Route::get('/about', function () {
@@ -43,3 +43,37 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder')
+   ->name('io_generator_builder');
+Route::get('field_template', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@fieldTemplate')
+   ->name('io_field_template');
+Route::get('relation_field_template', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@relationFieldTemplate')
+   ->name('io_relation_field_template');
+Route::post('generator_builder/generate', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generate')
+   ->name('io_generator_builder_generate');
+Route::post('generator_builder/rollback', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@rollback')
+   ->name('io_generator_builder_rollback');
+Route::post('generator_builder/generate-from-file','\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generateFromFile')
+   ->name('io_generator_builder_generate_from_file');
+
+
+Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder')->name('io_generator_builder');
+
+Route::get('field_template', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@fieldTemplate')->name('io_field_template');
+
+Route::get('relation_field_template', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@relationFieldTemplate')->name('io_relation_field_template');
+
+Route::post('generator_builder/generate', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generate')->name('io_generator_builder_generate');
+
+Route::post('generator_builder/rollback', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@rollback')->name('io_generator_builder_rollback');
+
+Route::post(
+    'generator_builder/generate-from-file',
+    '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generateFromFile'
+)->name('io_generator_builder_generate_from_file');
+Route::resource('barangs', App\Http\Controllers\BarangController::class);
